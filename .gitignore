@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+backpack.tf/packages/
+backpack.tf/backpack.tf/bin/
+backpack.tf/backpack.tf/obj/Debug/CoreCompileInputs.cache
+backpack.tf/backpack.tf/bin
