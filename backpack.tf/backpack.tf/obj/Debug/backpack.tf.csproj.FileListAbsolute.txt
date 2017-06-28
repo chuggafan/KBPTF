@@ -1,0 +1,11 @@
+c:\users\mihajlo\documents\visual studio 2015\Projects\backpack.tf\backpack.tf\bin\Debug\Newtonsoft.Json.dll
+c:\users\mihajlo\documents\visual studio 2015\Projects\backpack.tf\backpack.tf\bin\Debug\Newtonsoft.Json.xml
+c:\users\mihajlo\documents\visual studio 2015\Projects\backpack.tf\backpack.tf\obj\Debug\backpack.tf.Form1.resources
+c:\users\mihajlo\documents\visual studio 2015\Projects\backpack.tf\backpack.tf\obj\Debug\backpack.tf.Properties.Resources.resources
+c:\users\mihajlo\documents\visual studio 2015\Projects\backpack.tf\backpack.tf\obj\Debug\backpack.tf.csproj.GenerateResource.Cache
+c:\users\mihajlo\documents\visual studio 2015\Projects\backpack.tf\backpack.tf\obj\Debug\backpack.tf.csprojResolveAssemblyReference.cache
+c:\users\mihajlo\documents\visual studio 2015\Projects\backpack.tf\backpack.tf\bin\Debug\BackpackTF.exe.config
+c:\users\mihajlo\documents\visual studio 2015\Projects\backpack.tf\backpack.tf\bin\Debug\BackpackTF.exe
+c:\users\mihajlo\documents\visual studio 2015\Projects\backpack.tf\backpack.tf\bin\Debug\BackpackTF.pdb
+c:\users\mihajlo\documents\visual studio 2015\Projects\backpack.tf\backpack.tf\obj\Debug\BackpackTF.exe
+c:\users\mihajlo\documents\visual studio 2015\Projects\backpack.tf\backpack.tf\obj\Debug\BackpackTF.pdb
