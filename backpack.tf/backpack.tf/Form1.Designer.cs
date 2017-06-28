@@ -86,6 +86,8 @@
             this.status_date = new System.Windows.Forms.ToolStripStatusLabel();
             this.tim_vreme = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -537,6 +539,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.txb_invprev2);
             this.tabPage2.Controls.Add(this.txb_rocketname);
             this.tabPage2.Controls.Add(this.pcb_rocket);
@@ -556,12 +560,12 @@
             // 
             this.txb_invprev2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txb_invprev2.Location = new System.Drawing.Point(214, 6);
+            this.txb_invprev2.Location = new System.Drawing.Point(214, 25);
             this.txb_invprev2.Multiline = true;
             this.txb_invprev2.Name = "txb_invprev2";
             this.txb_invprev2.ReadOnly = true;
             this.txb_invprev2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txb_invprev2.Size = new System.Drawing.Size(252, 500);
+            this.txb_invprev2.Size = new System.Drawing.Size(252, 481);
             this.txb_invprev2.TabIndex = 6;
             this.txb_invprev2.TabStop = false;
             // 
@@ -604,12 +608,12 @@
             // 
             this.txb_invprev.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txb_invprev.Location = new System.Drawing.Point(472, 6);
+            this.txb_invprev.Location = new System.Drawing.Point(472, 25);
             this.txb_invprev.Multiline = true;
             this.txb_invprev.Name = "txb_invprev";
             this.txb_invprev.ReadOnly = true;
             this.txb_invprev.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txb_invprev.Size = new System.Drawing.Size(259, 500);
+            this.txb_invprev.Size = new System.Drawing.Size(259, 481);
             this.txb_invprev.TabIndex = 1;
             this.txb_invprev.TabStop = false;
             // 
@@ -658,6 +662,24 @@
             this.tim_vreme.Enabled = true;
             this.tim_vreme.Interval = 500;
             this.tim_vreme.Tick += new System.EventHandler(this.tim_vreme_Tick);
+            // 
+            // label17
+            // 
+            this.label17.Location = new System.Drawing.Point(214, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(252, 13);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "rgInventory";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.Location = new System.Drawing.Point(472, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(259, 13);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "rgDescriptions";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -756,6 +778,8 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
     }
 }
 
