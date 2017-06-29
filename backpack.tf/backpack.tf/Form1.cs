@@ -118,7 +118,7 @@ namespace backpack.tf
             foreach (var item in items)
             {
                 //Do something with the items
-                var itemName = steamInvData.GetItemName(item.DefIndex);
+                var itemName = await steamInvData.GetItemName(item.DefIndex);
                 
                 txb_invprev.Text += "You have: " + itemName.ToString() + Environment.NewLine;
                 //MessageBox.Show("You have: !"+itemName.ToString());

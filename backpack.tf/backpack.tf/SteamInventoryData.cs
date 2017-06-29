@@ -15,10 +15,9 @@ namespace backpack.tf
         public SteamInventoryData(string apiKey)
         {
             _econItems = new EconItems(apiKey, EconItemsAppId.TeamFortress2);
-            RetrieveBaseItems();
         }
 
-        private async void RetrieveBaseItems()
+        private async Task RetrieveBaseItems()
         {
             var items = await _econItems.GetSchemaForTF2Async();
             _items = items.Data.Items;
@@ -30,8 +29,12 @@ namespace backpack.tf
             return result.Data.Items;
         }
 
-        public string GetItemName(uint itemDefIndex)
+        public async Task<string> GetItemName(uint itemDefIndex)
         {
+            if (_items == null)
+            {
+                await RetrieveBaseItems();
+            }
             return _items.FirstOrDefault(x => x.DefIndex == itemDefIndex)?.Name;
         }
     }
