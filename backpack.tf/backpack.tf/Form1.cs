@@ -110,7 +110,6 @@ namespace backpack.tf
 
         private async void btn_getinv_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             ulong kresenkoid = 76561198044606823;
 
             var steamInvData = new SteamInventoryData(apikeySTEAM);
@@ -123,16 +122,6 @@ namespace backpack.tf
                 
                 txb_invprev.Text += "You have: " + itemName.ToString() + Environment.NewLine;
                 //MessageBox.Show("You have: !"+itemName.ToString());
-=======
-            var steamInvData = new SteamInventoryData(apikey);
-            var items = await steamInvData.GetItems(000000);
-
-            foreach (var item in items)
-            {
-                //Do something with the items
-                var itemName = steamInvData.GetItemName(item.DefIndex);
-
->>>>>>> origin/master
                 MessageBox.Show($"You have a(n) {itemName}!");
             }
 
@@ -160,7 +149,6 @@ namespace backpack.tf
             ////pcb_rocket.Load(imageUrl + "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgEMaQkUTxr2vTx8mMnvA-aHAfQ_ktk664MayTl8lBNzO_amNQh1fQfJBLRSXeA09wDpGxgz-dJiWdak_rUDFku65cDEXOZ5c5wVWZXOC6KAYlj97Ew_06BYKceP8im93ynpOzxfXxG6_W4BnLKOu7Q5gj5FQG_w87tcprFVJw");
         }
     }
-<<<<<<< HEAD
     /*
     public class TF2Inv
     {
@@ -178,25 +166,6 @@ namespace backpack.tf
         public int pos { get; set; }
     }
 
-=======
-
-    public class TF2Inv
-    {
-        public bool success { get; set; }
-        public TF2ItemInv rgInventory { get; set; }
-        public TF2ItemDesc rgDescriptions { get; set; }
-    }
-
-    public class TF2ItemInv
-    {
-        public int id { get; set; }
-        public long classid { get; set; }
-        public long instanceid { get; set; }
-        public int amount { get; set; }
-        public int pos { get; set; }
-    }
-
->>>>>>> origin/master
     public class TF2ItemDesc
     {
         public int classid { get; set; }
@@ -205,9 +174,5 @@ namespace backpack.tf
         public string market_name { get; set; }
         public string name_color { get; set; }
         public string background_color { get; set; }
-<<<<<<< HEAD
     }*/
-=======
-    }
->>>>>>> origin/master
 }
