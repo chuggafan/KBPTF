@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.IO;
 
 namespace backpack.tf
 {
@@ -116,56 +107,67 @@ namespace backpack.tf
             }
         }
 
-        private void btn_getinv_Click(object sender, EventArgs e)
+        private async void btn_getinv_Click(object sender, EventArgs e)
         {
-            string id = txb_steamid.Text;
-            string url = "http://steamcommunity.com/id/"+id+"/inventory/json/440/2";
-            string imageUrl = "http://cdn.steamcommunity.com/economy/image/";
+            var steamInvData = new SteamInventoryData(apikey);
+            var items = await steamInvData.GetItems(000000);
 
-            using (var webClient = new WebClient())
+            foreach (var item in items)
             {
-                var json = webClient.DownloadString(url);
+                //Do something with the items
+                var itemName = steamInvData.GetItemName(item.DefIndex);
 
-                dynamic array = JsonConvert.DeserializeObject(json);
-                var inve = array.rgInventory.ToString();
-                var desc = array.rgDescriptions.ToString();
-
-                //var userList = JsonConvert.DeserializeObject<Dictionary<string, TF2Inv>>(array);
-
-                txb_invprev2.Text = formatJson(inve);
-                txb_invprev.Text = formatJson(desc);
-
-                //pcb_rocket.Load(imageUrl + img);
-
+                MessageBox.Show($"You have a(n) {itemName}!");
             }
 
-            //pcb_rocket.Load(imageUrl + "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgEMaQkUTxr2vTx8mMnvA-aHAfQ_ktk664MayTl8lBNzO_amNQh1fQfJBLRSXeA09wDpGxgz-dJiWdak_rUDFku65cDEXOZ5c5wVWZXOC6KAYlj97Ew_06BYKceP8im93ynpOzxfXxG6_W4BnLKOu7Q5gj5FQG_w87tcprFVJw");
+            //string id = txb_steamid.Text;
+            //string url = "http://steamcommunity.com/id/" + id + "/inventory/json/440/2";
+            //string imageUrl = "http://cdn.steamcommunity.com/economy/image/";
+
+            //using (var webClient = new WebClient())
+            //{
+            //    var json = webClient.DownloadString(url);
+            //
+            //    dynamic array = JsonConvert.DeserializeObject(json);
+            //    var inve = array.rgInventory.ToString();
+            //    var desc = array.rgDescriptions.ToString();
+            //
+            //    //var userList = JsonConvert.DeserializeObject<Dictionary<string, TF2Inv>>(array);
+            //
+            //    txb_invprev2.Text = formatJson(inve);
+            //    txb_invprev.Text = formatJson(desc);
+            //
+            //    //pcb_rocket.Load(imageUrl + img);
+            //
+            //}
+
+            ////pcb_rocket.Load(imageUrl + "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgEMaQkUTxr2vTx8mMnvA-aHAfQ_ktk664MayTl8lBNzO_amNQh1fQfJBLRSXeA09wDpGxgz-dJiWdak_rUDFku65cDEXOZ5c5wVWZXOC6KAYlj97Ew_06BYKceP8im93ynpOzxfXxG6_W4BnLKOu7Q5gj5FQG_w87tcprFVJw");
         }
     }
-}
 
-public class TF2Inv
-{
-    public bool success { get; set; }
-    public TF2ItemInv rgInventory { get; set; }
-    public TF2ItemDesc rgDescriptions { get; set; }
-}
+    public class TF2Inv
+    {
+        public bool success { get; set; }
+        public TF2ItemInv rgInventory { get; set; }
+        public TF2ItemDesc rgDescriptions { get; set; }
+    }
 
-public class TF2ItemInv
-{
-    public int id { get; set; }
-    public long classid { get; set; }
-    public long instanceid { get; set; }
-    public int amount { get; set; }
-    public int pos { get; set; }
-}
+    public class TF2ItemInv
+    {
+        public int id { get; set; }
+        public long classid { get; set; }
+        public long instanceid { get; set; }
+        public int amount { get; set; }
+        public int pos { get; set; }
+    }
 
-public class TF2ItemDesc
-{
-    public int classid { get; set; }
-    public int instanceid { get; set; }
-    public string icon_url { get; set; }
-    public string market_name { get; set; }
-    public string name_color { get; set; }
-    public string background_color { get; set; }
+    public class TF2ItemDesc
+    {
+        public int classid { get; set; }
+        public int instanceid { get; set; }
+        public string icon_url { get; set; }
+        public string market_name { get; set; }
+        public string name_color { get; set; }
+        public string background_color { get; set; }
+    }
 }
